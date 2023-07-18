@@ -24,14 +24,14 @@ export const Users = () => {
     <div>
       <Navbar />
       <h1>Users</h1>
-      <ul>
+      <ul className="user">
         <li>
           {userData?.data.userInfos.firstName}, {userData?.data.userInfos.lastName}
         </li>
         <li>{userData?.data.userInfos.age}</li>
       </ul>
       <h1>tu as bruler</h1>
-      <ul>
+      <ul className="user">
         <li>calories : {body.calorie} kCal</li>
         <li>Glucides : {body.carbohydrate}g</li>
         <li>Lipides : {body.lipid}g</li>

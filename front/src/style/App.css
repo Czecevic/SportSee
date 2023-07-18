@@ -1,43 +1,108 @@
 html {
-    box-sizing: border-box;
-    
-    color: ${styleVar.neutral900};
-    font-family: Roboto, system-ui, Helvetica, sans-serif;
-    font-weight: 400;
+  box-sizing: border-box;
+  font-family: Roboto, system-ui, Helvetica, sans-serif;
+  font-weight: 400;
 
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  max-width: 1440px;
+  margin: auto;
+  overflow: hidden;
+
+  @media (max-width: 1340px) {
+    max-width: 1024px;
+    max-height: 780px;
+  }
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+/* Navbar container */
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Logo styles */
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* Menu styles */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+.navbar-menu li {
+  padding: 8px 12px;
+}
+
+.navbar-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Active menu item */
+.navbar-menu li.active {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* Responsive styles for mobile */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
+  .navbar-menu {
+    margin-top: 10px;
   }
 
-  body {
-    margin: 0;
+  .navbar-menu li {
+    padding: 5px 8px;
   }
-
-  #root {
-    max-width: 1440px;
-    margin: auto;
-    overflow: hidden;
-
-    @media (max-width: 1340px) {
-      max-width: 1024px;
-      max-height: 780px;
-    }
-  }
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  
-    margin: 0;
-    padding: 0;
-  
-    list-style-type: none;
-  }
-`;
+}

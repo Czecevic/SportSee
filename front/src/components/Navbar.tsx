@@ -1,22 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, NavLink } from "react-router-dom";
+import "../style/App.css"
 
 export const Navbar: React.FC = () => {
   return (
-    <nav>
-      <ul>
+<nav className="navbar">
+      <Link to="/login" className="navbar-logo">
+        My Logo
+      </Link>
+      <ul className="navbar-menu">
         <li>
-          <Link to="/login">Accueil</Link>
+          <NavLink to="/login" className="active">
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">Profil</Link>
+          <NavLink to="/about" className="active">
+            About
+          </NavLink>
         </li>
         <li>
-          <Link to="/settings">Réglage</Link>
-        </li>
-        <li>
-          <Link to="/commu">Communauté</Link>
+          <NavLink to="/contact" className="active">
+            Contact
+          </NavLink>
         </li>
       </ul>
     </nav>
