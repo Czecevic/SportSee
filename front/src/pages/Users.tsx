@@ -10,33 +10,15 @@ import { useDataContext } from "../components/DataContext";
 
 export const Users = () => {
   const { id } = useParams<{ id: string | undefined }>();
-  const { userData, setUserData, keyData, setKeyData } = useDataContext(); 
-  React.useEffect(() => {
-    const AxiosUserData = () => {
-        const dataCopy = GetUserData(id);
-        if (dataCopy) {
-            setUserData(dataCopy.data.userInfos);
-            const activityData = GetUserActivityData(id)
-            if(activityData) {
-                setKeyData(activityData.data.keyData)
-            }
-        }
-    };
-
-    AxiosUserData();
-  }, [id, setUserData, setKeyData])
-  
-  
-  
-
+  const userData = GetUserData(id)
   if (!userData) {
     return <li>...loading</li>;
   }
   const body: KeyData = {
-    calorie: keyData?.calorieCount ?? 0,
-    protein: keyData?.proteinCount ?? 0,
-    carbohydrate: keyData?.carbohydrateCount ?? 0,
-    lipid: keyData?.lipidCount ?? 0,
+    calorie: userData?.data.keyData?.calorieCount ?? 0,
+    protein: userData?.data.keyData?.proteinCount ?? 0,
+    carbohydrate: userData?.data.keyData?.carbohydrateCount ?? 0,
+    lipid: userData?.data.keyData?.lipidCount ?? 0,
   };
   return (
     <div>
@@ -44,9 +26,9 @@ export const Users = () => {
       <h1>Users</h1>
       <ul>
         <li>
-          {userData.firstName}, {userData.lastName}
+          {userData?.data.userInfos.firstName}, {userData?.data.userInfos.lastName}
         </li>
-        <li>{userData.age}</li>
+        <li>{userData?.data.userInfos.age}</li>
       </ul>
       <h1>tu as bruler</h1>
       <ul>
