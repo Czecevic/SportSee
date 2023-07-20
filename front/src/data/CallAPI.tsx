@@ -31,6 +31,9 @@ export const UseUserData = (id: string | undefined, endpoint: string) => {
 };
 
 export const GetUserData = (id: string | undefined) => UseUserData(id, "");
-export const GetUserActivityData = (id: string) => UseUserData(id, "activity");
-export const GetUserAverageSessionData = (id: string) => UseUserData(id, "average-sessions");
-export const GetUserPerformanceData = (id:string) => UseUserData(id, "performance");
+export const GetUserActivityData = (id: string | undefined) =>
+  UseUserData(id, "activity");
+export const GetUserAverageSessionData = (id: string | undefined) =>
+  UseUserData(id, "average-sessions");
+export const GetUserPerformanceData = (id: string | undefined) =>
+  UseUserData(id, "performance");
