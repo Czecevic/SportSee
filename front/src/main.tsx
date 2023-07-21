@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./style/index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Users } from "./pages/Users";
+import { Users } from "./pages/DashBaord";
 import { Login } from "./pages/Login";
 import { Error } from "./pages/Error";
 import { Navbar } from "./components/Navbar";
