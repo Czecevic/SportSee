@@ -17,3 +17,13 @@ export interface DataContextProps {
   setUserData: React.Dispatch<React.SetStateAction<UserData | null>>;
   setKeyData: React.Dispatch<React.SetStateAction<KeyData | null>>;
 }
+
+export interface PerformanceProps {
+  performanceDataArray: {
+    kind: string;
+    value: {
+      value: number;
+      kind: number;
+    };
+  };
+}

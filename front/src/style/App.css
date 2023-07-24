@@ -16,12 +16,6 @@ body {
   margin: 0;
 }
 
-#root {
-  max-width: 1440px;
-  margin: auto;
-  overflow: hidden;
-}
-
 ul {
   display: flex;
   flex-wrap: wrap;
@@ -90,4 +84,7 @@ ul {
 .navbar-menu li.active {
   background-color: #555;
   border-radius: 4px;
+}
+g path.recharts-rectangle {
+  border-radius: 10px;
 }
