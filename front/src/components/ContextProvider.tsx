@@ -1,26 +1,35 @@
-// import { createContext, useState } from "react";
+import { createContext, useState, ReactNode } from "react";
 
-// interface ContextType {
-//   user: string;
-//   setUser: React.Dispatch<React.SetStateAction<string>>;
-// }
+interface FetchContextType {
+  fetch: boolean;
+  toggleFetch(): void;
+}
 
-// export const Context = createContext<ContextType>({
-//   user: "",
-//   setUser: () => {},
-// });
+export const FetchContext = createContext<FetchContextType>({
+  fetch: true,
+  toggleFetch: () => {},
+});
 
-// export const ContextProvider = ({ children }) => {
-//   const [user, setUser] = useState(false);
+interface ContextProviderProps {
+  children: ReactNode;
+}
 
-//   return (
-//     <Context.Provider
-//       value={{
-//         user,
-//         setUser,
-//       }}
-//     >
-//       {children}
-//     </Context.Provider>
-//   );
-// };
+export const ContextProvider: React.FunctionComponent<ContextProviderProps> = ({
+  children,
+}) => {
+  const [fetch, setFetch] = useState<boolean>(true);
+  console.log(fetch);
+  const toggleFetch = () => {
+    setFetch(fetch === true ? false : true);
+  };
+  return (
+    <FetchContext.Provider
+      value={{
+        fetch,
+        toggleFetch,
+      }}
+    >
+      {children}
+    </FetchContext.Provider>
+  );
+};
