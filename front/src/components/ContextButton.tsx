@@ -2,12 +2,11 @@
 import { useContext } from "react";
 import { FetchContext } from "./ContextProvider";
 
-export const ContextButton: React.FunctionComponent = () => {
-  const { fetch, toggleFetch } = useContext(FetchContext);
-  console.log(toggleFetch());
+export const ContextButton = () => {
+  const { fetch, setFetch } = useContext(FetchContext);
   return (
-    <button onClick={() => toggleFetch()}>
-      {fetch === true ? "api" : "mock"}
+    <button onClick={() => setFetch(fetch === "api" ? "mock" : "api")}>
+      Fetch
     </button>
   );
 };

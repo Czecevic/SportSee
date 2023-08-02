@@ -10,12 +10,15 @@ import {
 } from "../data/CallAPI";
 import { KeyData } from "../interfaces/interfaces";
 import { Navbar } from "../components/Navbar";
-import { User } from "../components/user";
+import { User } from "../components/User";
 import { Activity } from "../components/Activity";
 import { DailyAvg } from "../components/DailyAvg";
 import { Performance } from "../components/Performance";
+import { FetchContext } from "../components/ContextProvider";
+import { useContext } from "react";
 export const Users = () => {
   // declaration des constantes
+  const { fetch } = useContext(FetchContext);
   const { id } = useParams<{ id: string | undefined }>();
   const userData = GetUserData(id);
   const userActivityData = GetUserActivityData(id);
@@ -44,25 +47,31 @@ export const Users = () => {
     lipid: userData?.data.keyData?.lipidCount ?? 0,
   };
 
-  console.log(averageSessions);
-
   const performanceDataArray = performancesData.map((value, index) => ({
     kind: performancesKind[index + 1],
     value,
   }));
   return (
-    <div>
+    <section>
       <Navbar />
-      {/* Utilisateur */}
-      <h1>Bonjour {userData?.data.userInfos.firstName}</h1>
-      {/* les caractéristiques de l'utilisateur */}
-      <User body={body} />
-      {/* activité */}
-      <Activity activitys={activitys} />
+      <div className="DashBoard">
+        {/* Utilisateur */}
+        <h1>Bonjour {userData?.data.userInfos.firstName}</h1>
+        <h2>{fetch}</h2>
+        <section className="DashBoardBodyAndGraph">
+          <div className="DashBoardBody">
+            {/* les caractéristiques de l'utilisateur */}
+            <User body={body} />
+          </div>
+          <div className=""></div>
+          {/* activité */}
+          <Activity activitys={activitys} />
+        </section>
+      </div>
       {/* activité quotidienne */}
       <Performance performanceDataArray={performanceDataArray} />
       {/* moyenne session par jour du membre sélectionnée */}
       <DailyAvg averageSessions={averageSessions} userId={Number(id)} />
-    </div>
+    </section>
   );
 };

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface UserData {
   firstName: string;
   lastName: string;
@@ -26,4 +28,13 @@ export interface PerformanceProps {
       kind: number;
     };
   };
+}
+
+export interface FetchContextType {
+  fetch: string;
+  setFetch: (value: string) => void;
+}
+
+export interface ContextProviderProps {
+  children: ReactNode;
 }

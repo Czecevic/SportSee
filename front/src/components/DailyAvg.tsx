@@ -35,8 +35,21 @@ export const DailyAvg: React.FunctionComponent<DailyAvgProps> = (props) => {
   );
   // console.log(AverageSessionsArray);
   return (
-    <>
-      <h1>Durée moyenne des sessions</h1>
+    <div
+      style={{
+        position: "relative",
+        height: "100%",
+      }}
+    >
+      {/* <div className="DailyActivityTitle">Activité quotidienne</div>
+      <div className="DailyActivityLegend">
+        <p className="LegendDetail">
+          <span className="ColorLegend">Poids (kg)</span>
+        </p>
+        <p className="LegendDetail">
+          <span className="ColorLegend">Calories brûlées (kCal)</span>
+        </p>
+      </div> */}
       <LineChart
         width={258}
         height={263}
@@ -53,6 +66,6 @@ export const DailyAvg: React.FunctionComponent<DailyAvgProps> = (props) => {
         <Tooltip />
         <Line type="monotone" dataKey="sessionLength" stroke="#82ca9d" />
       </LineChart>
-    </>
+    </div>
   );
 };

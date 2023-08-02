@@ -29,14 +29,14 @@ ul {
 }
 
 .user {
+  margin-left: 31px;
+  margin-top: 80px;
+  width: 100%;
+  max-width: 258px;
+  height: 613px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-items: stretch;
-  margin-right: 10%;
-  padding: 0;
-  list-style-type: none;
-  align-content: flex-end;
+  justify-content: space-between;
 }
 
 .user li {
@@ -47,7 +47,7 @@ ul {
 
 /* Navbar container */
 .navbar {
-  background-color: #333;
+  background-color: #020203;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -57,10 +57,34 @@ ul {
 
 /* Logo styles */
 .navbar-logo {
+  display: flex;
+  align-items: center;
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
-  color: white;
+  color: red;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: red;
+  border-radius: 50%;
+  margin-left: 30px;
+  width: 50px;
+  height: 50px;
+}
+
+.logo img {
+  margin-top: 5px;
+  object-fit: cover;
+}
+
+.logo-title {
+  margin-left: 10px;
+  margin-right: 50px;
+  font-weight: 500;
 }
 
 /* Menu styles */
@@ -69,10 +93,14 @@ ul {
   display: flex;
   gap: 20px;
   margin: 0;
+  flex-wrap: nowrap;
 }
 
 .navbar-menu li {
-  padding: 8px 12px;
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-right: 70px;
 }
 
 .navbar-menu li a {
@@ -80,11 +108,71 @@ ul {
   text-decoration: none;
 }
 
-/* Active menu item */
-.navbar-menu li.active {
-  background-color: #555;
-  border-radius: 4px;
+/* Page Of Login */
+
+.LoginPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-g path.recharts-rectangle {
+
+.LoginPage h1 {
+  text-align: -webkit-center;
+  padding: 0 5%;
+}
+
+.userButton {
+  border: 1px solid #020203;
+  margin: 5px;
+  padding: 10px;
   border-radius: 10px;
+  transition: background-color 0.1s ease-in 0.1s;
+  cursor: pointer;
+}
+
+.userButton:hover {
+  background-color: red;
+}
+
+.userButton a {
+  text-decoration: none;
+  color: #020203;
+}
+/* Active menu item */
+
+.DashBoard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 5%;
+}
+
+.DashBoard h1 {
+  font-size: 4.8rem;
+  font-weight: 500;
+  text-align: start;
+}
+
+.DailyActivityTitle {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+
+  margin: 0;
+
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.ColorLegend {
+  display: inline-block;
+
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 0.5rem 0 0;
+  border-radius: 50%;
+}
+
+.LegendDetail {
+  margin: 0 0 0 2rem;
 }
