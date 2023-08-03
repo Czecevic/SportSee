@@ -63,15 +63,18 @@ export const Users = () => {
             {/* les caractéristiques de l'utilisateur */}
             <User body={body} />
           </div>
-          <div className=""></div>
-          {/* activité */}
-          <Activity activitys={activitys} />
+          <div className="DashBoardGraph">
+            {/* activité */}
+            <Activity activitys={activitys} />
+            <div className="Graph">
+              {/* activité quotidienne */}
+              <Performance performanceDataArray={performanceDataArray} />
+              {/* moyenne session par jour du membre sélectionnée */}
+              <DailyAvg averageSessions={averageSessions} userId={Number(id)} />
+            </div>
+          </div>
         </section>
       </div>
-      {/* activité quotidienne */}
-      <Performance performanceDataArray={performanceDataArray} />
-      {/* moyenne session par jour du membre sélectionnée */}
-      <DailyAvg averageSessions={averageSessions} userId={Number(id)} />
     </section>
   );
 };

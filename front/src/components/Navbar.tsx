@@ -14,13 +14,23 @@ export const Navbar: React.FC = () => {
           <h1 className="logo-title">SportSee</h1>
         </Link>
         <li>
-          <NavLink to="/about" className="active">
-            About
+          <NavLink to="/" className="active">
+            Accueil
           </NavLink>
         </li>
         <li>
           <NavLink to="/contact" className="active">
-            Contact
+            Profil
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" className="active">
+            Reglage
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" className="active">
+            Communauté
           </NavLink>
         </li>
       </ul>
