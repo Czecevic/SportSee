@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Users } from "./pages/DashBaord";
+import { DashBoard } from "./pages/DashBoard";
 import { Login } from "./pages/Login";
 import { Error } from "./pages/Error";
-import { ContextProvider } from "./components/ContextProvider";
+import { ContextProvider } from "./Context/ContextProvider";
 
 export const App = () => {
   return (
@@ -10,7 +10,7 @@ export const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/user/:id" element={<Users />} />
+          <Route path="/user/:id" element={<DashBoard />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>

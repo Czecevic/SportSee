@@ -2,7 +2,6 @@ html {
   box-sizing: border-box;
   font-family: Roboto, system-ui, Helvetica, sans-serif;
   font-weight: 400;
-
   scroll-behavior: smooth;
 }
 
@@ -16,7 +15,7 @@ body {
   margin: 0;
 }
 
-ul {
+.navbar-menu ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -28,23 +27,65 @@ ul {
   list-style-type: none;
 }
 
+.SideBarAndDashBoard {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* sideBar  */
+
+.sideBar {
+  display: flex;
+  background-color: #020203;
+  flex-direction: column;
+}
+
+.sideBar ul {
+  padding: 0;
+  margin-top: 200px;
+}
+
+.sideBar li {
+  list-style: none;
+  margin: 1rem;
+}
+
+.copyright {
+  color: white;
+  transform: rotate(270deg);
+  height: 5rem;
+  margin: 8rem -35px;
+  font-size: small;
+  width: 200%;
+}
+
 .user {
+  margin: 0;
   width: 100%;
   max-width: 258px;
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  align-items: stretch;
   justify-content: space-between;
+  list-style-type: none;
 }
 
 .user li {
-  border: 1px solid red;
+  border-radius: 10px;
+  background-color: #00000005;
   padding: 0rem 2rem;
   text-align: -webkit-center;
   display: flex;
   align-items: center;
   gap: 40px;
   justify-content: space-between;
+}
+
+.user img {
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 /* Navbar container */
@@ -55,6 +96,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  width: 100%;
 }
 
 /* Logo styles */
@@ -93,6 +135,7 @@ ul {
 .navbar-menu {
   list-style: none;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 20px;
   margin: 0;
@@ -116,6 +159,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .LoginPage h1 {
@@ -145,33 +189,39 @@ ul {
 .DashBoard {
   display: flex;
   flex-direction: column;
+  margin: 2%;
   width: 100%;
-  margin: 5%;
 }
 
 .DashBoard h1 {
-  font-size: 4.8rem;
+  font-size: 3rem;
   font-weight: 500;
   text-align: start;
 }
 
 .DashBoardBodyAndGraph {
-  border: 1px solid red;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .DashBoardGraph {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  width: 75%;
+}
+
+.DashBoardBody {
+  width: 25%;
 }
 
 /* Activity */
 .DailyActivityContainer {
-  position: relative;
-  height: 100%;
   background: #fbfbfb;
+}
+
+.test {
+  background-color: #706e6e;
 }
 
 .DailyActivityLegend {
@@ -180,6 +230,7 @@ ul {
 
 .Graph {
   display: flex;
+  justify-content: space-between;
 }
 
 .TitleAndLegend {
@@ -202,4 +253,40 @@ ul {
   align-items: center;
   margin: 0 0 0 2rem;
   color: #706e6e;
+}
+
+.custom-tooltip {
+  display: flex;
+  flex-direction: column;
+  background-color: #ff0000;
+  color: #fbfbfb;
+  padding: 10px;
+  gap: 10px;
+}
+
+/* Performance */
+
+.performance {
+  background-color: #020203;
+  border-radius: 10px;
+}
+
+/* AverageSession */
+
+.averageSession {
+  background-color: #ff0000;
+  border-radius: 10px;
+}
+
+.DailyAvgValue {
+  background-color: #fbfbfb;
+  padding: 1px 3px;
+}
+
+/* Error */
+
+.errorTitle {
+  text-align: center;
+  padding: 20rem;
+  font-size: 70px;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -8,21 +9,20 @@ import {
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
+  ResponsiveContainer,
 } from "recharts";
+import { DailyAvgProps } from "../interfaces/interfaces";
 
-interface DailyAvgProps {
-  averageSessions: {
-    map: any;
-    day: number | string;
-    sessionLength: number;
-  };
-}
-
-// day : {averageSession.day} session :{" "}
-// {averageSession.sessionLength}
+const CustomTooltipAvg = ({ payload }: any) => {
+  if (payload.length) {
+    return (
+      <div className="DailyAvgValue">
+        <p>{`${payload[0].value}`} min</p>
+      </div>
+    );
+  }
+};
 export const DailyAvg: React.FunctionComponent<DailyAvgProps> = (props) => {
   const { averageSessions } = props;
   const dayLetter = ["L", "M", "M", "J", "V", "S", "D"];
@@ -33,39 +33,55 @@ export const DailyAvg: React.FunctionComponent<DailyAvgProps> = (props) => {
       ...value,
     })
   );
-  // console.log(AverageSessionsArray);
   return (
-    <div
-      style={{
-        position: "relative",
-        height: "100%",
-      }}
-    >
-      {/* <div className="DailyActivityTitle">Activité quotidienne</div>
-      <div className="DailyActivityLegend">
-        <p className="LegendDetail">
-          <span className="ColorLegend">Poids (kg)</span>
-        </p>
-        <p className="LegendDetail">
-          <span className="ColorLegend">Calories brûlées (kCal)</span>
-        </p>
-      </div> */}
-      <LineChart
-        width={258}
-        height={263}
-        data={AverageSessionsArray}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <XAxis dataKey="dayLetter" />
-        <YAxis />
-        <Tooltip />
-        <Line type="monotone" dataKey="sessionLength" stroke="#82ca9d" />
-      </LineChart>
+    <div className="averageSession">
+      <ResponsiveContainer width="100%" aspect={1}>
+        <LineChart
+          outerRadius="75%"
+          data={AverageSessionsArray}
+          margin={{
+            top: 0,
+            right: 12,
+            left: 12,
+            bottom: 24,
+          }}
+        >
+          <XAxis
+            dataKey="dayLetter"
+            stroke="rgba(255, 255, 255, 0.6)"
+            axisLine={false}
+            dy={10}
+            tickLine={false}
+            stroke="#FFFFFF"
+            opacity={0.6}
+          />
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            hide={true}
+            domain={["dataMin - 10", "dataMax + 30"]}
+          />
+          <Tooltip
+            content={<CustomTooltipAvg />}
+            cursor={{
+              stroke: "rgba(0, 0, 0, 0.1)",
+              strokeWidth: 60,
+            }}
+          />
+          <Line
+            type="monotone"
+            dataKey="sessionLength"
+            stroke="rgba(255, 255, 255, 0.6)"
+            strokeWidth={2}
+            dot={false}
+            activeDot={{
+              stroke: "rgba(255, 255, 255, 0.6)",
+              strokeWidth: 10,
+              r: 5,
+            }}
+          />
+        </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 };

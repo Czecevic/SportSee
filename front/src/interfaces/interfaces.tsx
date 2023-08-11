@@ -21,12 +21,9 @@ export interface DataContextProps {
 }
 
 export interface PerformanceProps {
-  performanceDataArray: {
-    kind: string;
-    value: {
-      value: number;
-      kind: number;
-    };
+  performanceData: {
+    kind: number;
+    value: number;
   };
 }
 
@@ -37,4 +34,11 @@ export interface FetchContextType {
 
 export interface ContextProviderProps {
   children: ReactNode;
+}
+
+export interface DailyAvgProps {
+  averageSessions: {
+    day: number | string;
+    sessionLength: number;
+  };
 }
