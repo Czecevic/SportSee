@@ -45,6 +45,7 @@ export const DashBoard = () => {
       !userAverageSessionData ||
       !userPerformanceData
     ) {
+      console.error("aucune donnée trouvé")
       return <div>Loading...</div>;
     }
 
@@ -64,6 +65,7 @@ export const DashBoard = () => {
       !userAverageSessionData ||
       !userPerformanceData
     ) {
+      console.error("aucune donnée trouvé")
       return <div>Loading...</div>;
     }
 

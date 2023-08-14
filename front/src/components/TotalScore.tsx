@@ -13,14 +13,15 @@ export const TotalScore: React.FunctionComponent = (props) => {
   ];
   return (
     <div className="Score">
+      <h1 className="scoreTitle">score</h1>
       <ResponsiveContainer width="100%" aspect={1}>
-        <PieChart width={160} height={160}>
+        <PieChart>
           <Pie
             data={BarChartData}
             dataKey="score"
             cx="50%"
             cy="50%"
-            innerRadius={70}
+            innerRadius={80}
             outerRadius={80}
             startAngle={90}
             endAngle={450}

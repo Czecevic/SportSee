@@ -269,6 +269,7 @@ body {
 .performance {
   background-color: #020203;
   border-radius: 10px;
+  width: 30%;
 }
 
 /* AverageSession */
@@ -276,11 +277,24 @@ body {
 .averageSession {
   background-color: #ff0000;
   border-radius: 10px;
+  width: 30%;
 }
 
 .DailyAvgValue {
   background-color: #fbfbfb;
   padding: 1px 3px;
+}
+
+.Score {
+  background-color: #fbfbfb;
+  width: 30%;
+  display: flex;
+}
+
+.scoreTitle {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 /* Error */

@@ -47,7 +47,7 @@ export const Performance: React.FunctionComponent<PerformanceProps> = (
             tickLine={false}
             // tickFormatter="kind"
             tick={{
-              fontSize: 10,
+              fontSize: 8,
               fontWeight: 500,
             }}
           />

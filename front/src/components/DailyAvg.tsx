@@ -52,7 +52,6 @@ export const DailyAvg: React.FunctionComponent<DailyAvgProps> = (props) => {
             axisLine={false}
             dy={10}
             tickLine={false}
-            stroke="#FFFFFF"
             opacity={0.6}
           />
           <YAxis
