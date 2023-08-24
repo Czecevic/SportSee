@@ -280,6 +280,15 @@ body {
   width: 30%;
 }
 
+.averageSessionTitle {
+  position: absolute;
+  font-size: 12px;
+  text-align: start;
+  margin: 10px 30px;
+  color: #fbfbfb;
+  opacity: 0.6;
+}
+
 .DailyAvgValue {
   background-color: #fbfbfb;
   padding: 1px 3px;
@@ -293,8 +302,15 @@ body {
 
 .scoreTitle {
   position: absolute;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1rem !important;
+  margin: 15px 20px;
+}
+
+.scoreResult {
+  position: absolute;
+  font-size: 2rem !important;
+  margin: calc(8%);
+  align-self: center;
 }
 
 /* Error */
@@ -303,4 +319,10 @@ body {
   text-align: center;
   padding: 20rem;
   font-size: 70px;
+}
+
+@media (max-width: 1250px) {
+  .DashBoardBodyAndGraph {
+    flex-direction: column;
+  }
 }

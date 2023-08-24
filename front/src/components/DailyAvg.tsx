@@ -35,6 +35,10 @@ export const DailyAvg: React.FunctionComponent<DailyAvgProps> = (props) => {
   );
   return (
     <div className="averageSession">
+      <div className="averageSessionTitle">
+        <p>Durée moyenne des</p>
+        <p>sessions</p>
+      </div>
       <ResponsiveContainer width="100%" aspect={1}>
         <LineChart
           outerRadius="75%"
