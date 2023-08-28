@@ -25,7 +25,7 @@ export const TotalScore: React.FunctionComponent = (props) => {
     <div className="Score">
       <h1 className="scoreTitle">Score</h1>
       <h1 className="scoreResult">{scoreData * 100} %</h1>
-      <div className="">
+      <div className="titleOfScoreData">
         <h2>de votre</h2>
         <h2>objectif</h2>
       </div>

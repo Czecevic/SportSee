@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { UserData } from "../interfaces/interfaces";
 
-interface UserData {
-  data: object;
-  firstName: string;
-  lastName: string;
-  age: number;
-}
+// interface UserData {
+//   data: object;
+//   firstName: string;
+//   lastName: string;
+//   age: number;
+// }
 
 export const UseUserData = (id: string | undefined, endpoint: string) => {
   const [data, setData] = useState<UserData | null>(null);

@@ -12,14 +12,6 @@ export const Performance: React.FunctionComponent<PerformanceProps> = (
   props
 ) => {
   const { performanceData } = props;
-
-  // const dayLetter = ["L", "M", "M", "J", "V", "S", "D"];
-
-  // const AverageSessionsArray = averageSessions.map(
-  //   (value: string, index: number) => ({
-  //     dayLetter: dayLetter[index],
-  //     ...value,
-  //   })
   const kindTitle = [
     "Intensité",
     "Vitesse",
@@ -34,7 +26,6 @@ export const Performance: React.FunctionComponent<PerformanceProps> = (
       ...value,
     })
   );
-  console.log(performanceDataArray);
   return (
     <div className="performance">
       <ResponsiveContainer width="100%" aspect={1}>

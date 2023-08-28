@@ -3,7 +3,6 @@ import {
   BarChart,
   XAxis,
   Tooltip,
-  Legend,
   Bar,
   ResponsiveContainer,
   CartesianGrid,
@@ -62,7 +61,7 @@ export const Activity: React.FunctionComponent<ActivityProps> = (props) => {
       </div>
       <ResponsiveContainer width="100%" aspect={2}>
         <BarChart
-          margin={{ top: 80, right: 48, bottom: 32, left: 48 }}
+          margin={{ top: 80, right: 10, bottom: 32, left: 10 }}
           barGap={8}
           data={ActivitysArray}
           barCategoryGap="35%"
@@ -87,7 +86,7 @@ export const Activity: React.FunctionComponent<ActivityProps> = (props) => {
             orientation="right"
             tickLine={false}
             axisLine={false}
-            domain={["dataMin - 1", "dataMax + 2"]}
+            domain={["dataMin - 7", "dataMax + 3"]}
           />
           <XAxis
             dataKey="index"

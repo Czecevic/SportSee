@@ -6,6 +6,13 @@ export interface UserData {
   age: number;
 }
 
+// interface UserData {
+//   data: object;
+//   firstName: string;
+//   lastName: string;
+//   age: number;
+// }
+
 export interface KeyData {
   calorie: number;
   carbohydrate: number;

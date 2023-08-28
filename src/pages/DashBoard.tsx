@@ -45,7 +45,7 @@ export const DashBoard = () => {
       !userAverageSessionData ||
       !userPerformanceData
     ) {
-      console.error("aucune donnée trouvé")
+      console.error("aucune donnée trouvé");
       return <div>Loading...</div>;
     }
 
@@ -65,7 +65,7 @@ export const DashBoard = () => {
       !userAverageSessionData ||
       !userPerformanceData
     ) {
-      console.error("aucune donnée trouvé")
+      console.error("aucune donnée trouvé");
       return <div>Loading...</div>;
     }
 
@@ -108,11 +108,12 @@ export const DashBoard = () => {
               {fetch == "api"
                 ? userData.data.userInfos.firstName
                 : userData.userInfos.firstName}
+            </span>{" "}
+            <span className="dataOrigin">
+              (data from {fetch === "api" ? "l'api" : "le mock"})
             </span>
           </h1>
-          <h2>
-            Vous êtes connecté sur {fetch === "api" ? "l'api" : "le mock"}
-          </h2>
+          <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
           <section className="DashBoardBodyAndGraph">
             <div className="DashBoardGraph">
               <Activity activitys={activitys} />
