@@ -1,5 +1,5 @@
 import { Navbar } from "../components/Navbar";
-import { ContextButton } from "../Context/ContextButton";
+import { ContextButton } from "../context/ContextButton";
 import { Link } from "react-router-dom";
 import { SideBar } from "../components/SideBar";
 

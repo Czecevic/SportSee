@@ -14,7 +14,7 @@ import { User } from "../components/User";
 import { Activity } from "../components/Activity";
 import { DailyAvg } from "../components/DailyAvg";
 import { Performance } from "../components/Performance";
-import { FetchContext } from "../Context/ContextProvider";
+import { FetchContext } from "../context/ContextProvider";
 import { SideBar } from "../components/SideBar";
 import {
   USER_MAIN_DATA,

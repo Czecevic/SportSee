@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DashBoard } from "./pages/DashBoard";
 import { Login } from "./pages/Login";
 import { Error } from "./pages/Error";
-import { ContextProvider } from "./Context/ContextProvider";
+import { ContextProvider } from "./context/ContextProvider";
 
 export const App = () => {
   return (
