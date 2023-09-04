@@ -23,6 +23,7 @@ import {
   USER_PERFORMANCE,
 } from "../data/mockData";
 import { TotalScore } from "../components/TotalScore";
+import { ErrorAPI } from "./ErrorAPI";
 
 export const DashBoard = () => {
   // Récupérer les données de contexte
@@ -45,8 +46,7 @@ export const DashBoard = () => {
       !userAverageSessionData ||
       !userPerformanceData
     ) {
-      console.error("aucune donnée trouvé");
-      return <div>Loading...</div>;
+      return <ErrorAPI />;
     }
 
     activitys = userActivityData?.data.sessions;
